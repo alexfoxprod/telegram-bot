@@ -11,7 +11,7 @@ const Form = () => {
     const {tg} = useTelegram()
 
     useEffect(() => {
-        tg.MainButton.setParam({
+        tg.MainButton.setParams({
             text: 'Оформити заявку',
         })
     })
