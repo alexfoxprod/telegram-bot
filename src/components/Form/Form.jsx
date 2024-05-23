@@ -17,14 +17,15 @@ const Form = () => {
             subject,
         }
         tg.sendData(JSON.stringify(data))
-    }, [])
+    }, [country, street, subject])
 
     useEffect(() => {
         tg.WebApp.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.WebApp.offEvent('mainButtonClicked', onSendData)
         }
-    }, [])
+    }, [onSendData])
+
     useEffect(() => {
         tg.MainButton.setParams({
             text: 'Оформити заявку',
